@@ -1,21 +1,28 @@
-# Vue 3 + Vite
+# Poke Search - Desafio Code Base
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Poke Search é uma aplicação com o intuito de receber data da PokeApiV2 a partir de uma busca feita com o input do usuário, ela retorna o Pokemon e suas evoluções e ao pressionar o mouse em cima do Pokemon ela retorna seus dados.
 
-While this project uses Vue.js, Vite supports many popular JS frameworks. [See all the supported frameworks](https://vitejs.dev/guide/#scaffolding-your-first-vite-project).
+## Rodando a Aplicação
 
-## Deploy Your Own
+Use o gerenciador de pacotes NPM (https://www.npmjs.com) para rodar o Poke Search em sua máquina.
 
-Deploy your own Vite project with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/vite&template=vite)
-
-_Live Example: https://vite-vue-template.vercel.app_
-
-### Deploying From Your Terminal
-
-You can deploy your new Vite project with a single command from your terminal using [Vercel CLI](https://vercel.com/download):
-
-```shell
-$ vercel
+```bash
+npm install
 ```
+```bash
+npm run dev
+```
+
+## Tecnologias Utilizadas
+<p align="left">
+<img align="center" alt="Lucas-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+<img align="center" alt="Lucas-Vue" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" />
+<img align="center" alt="Lucas-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+<img align="center" alt="Lucas-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+<img align="center" alt="Lucas-TailWind" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg"/>
+</p>
+
+
+## Aplicação funcionando
+
+https://poke-search-smoky.vercel.app
