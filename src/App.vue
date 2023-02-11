@@ -5,6 +5,7 @@
     </section>
     <section class="w-full flex gap-12 flex-col justify-center items-center">
       <PokeBusca @queryPokemon="queryPokemon"></PokeBusca>
+      <PokeLista :pokeProp="pokemonData"></PokeLista>
     </section>
   </main>
 </template>
