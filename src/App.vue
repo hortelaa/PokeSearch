@@ -3,7 +3,7 @@
     <section class="w-full flex justify-center items-center">
       <h1 class="font-bold text-5xl md:text-7xl text-white">Poke<span class="text-red-600">Search</span></h1>
     </section>
-    <section class="w-full flex justify-center items-center">
+    <section class="w-full flex gap-12 flex-col justify-center items-center">
       <PokeBusca @queryPokemon="queryPokemon"></PokeBusca>
     </section>
   </main>
@@ -11,16 +11,23 @@
 
 <script>
 import PokeBusca from './components/PokeBusca.vue';
+import PokeLista from './components/PokeLista.vue';
+import PokeError from './components/PokeError.vue';
 
 export default {
   name: "Main",
   components: {
-    PokeBusca
+    PokeBusca, PokeLista, PokeError
   },
   data() {
     return {
-
-    }
+      evo_url: {},
+      evolucoes: [],
+      pokemonData: [],
+      error: false,
+      evoChain: [],
+      speciesData: [],
+    };
   },
   methods: {
     async queryPokemon(query) {
@@ -38,7 +45,6 @@ export default {
           this.evo_url = data.evolution_chain.url
           this.buscarEvos();
           this.speciesData = data;
-          console.log(this.evo_url);
         })
     },
     buscarEvos() {
@@ -46,7 +52,6 @@ export default {
         .then((data) => {
           this.evolucoes = data;
           this.parseChain();
-          console.log(this.evolucoes)
         })
     },
     async parseChain() {
@@ -63,7 +68,6 @@ export default {
               "stats": data.stats
             });
           })
-        console.log(this.pokemonData)
         evoData = evoData['evolves_to'][0];
       } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
     },

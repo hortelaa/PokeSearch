@@ -16,6 +16,11 @@ export default {
     components: {
         MagnifyingGlassIcon
     },
+    data() {
+        return {
+            query: '',
+        }
+    },
     methods: {
         queryPokemon() {
             this.$emit('queryPokemon', this.query)
