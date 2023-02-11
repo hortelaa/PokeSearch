@@ -6,7 +6,7 @@
     <section class="w-full flex gap-12 flex-col justify-center items-center">
       <PokeBusca @queryPokemon="queryPokemon"></PokeBusca>
       <PokeLista v-if="!error" :pokeProp="pokemonData"></PokeLista>
-      <PokeError v-if="error"></PokeError>
+      <PokeError class="animate__animated animate__fadeIn" v-if="error"></PokeError>
     </section>
   </main>
 </template>
@@ -76,3 +76,9 @@ export default {
   },
 }
 </script>
+
+<style>
+:root {
+  --animate-delay: 0.5s;
+}
+</style>

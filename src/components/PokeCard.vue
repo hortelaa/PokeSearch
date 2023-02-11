@@ -49,8 +49,5 @@ export default {
             showCardFront: true,
         }
     },
-    created() {
-        console.log(this.pokemon.types);
-    }
 }
 </script>
