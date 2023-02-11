@@ -66,7 +66,8 @@ export default {
               "name": data.name,
               "sprites": data.sprites,
               "color": this.speciesData.color,
-              "stats": data.stats
+              "stats": data.stats,
+              "types": data.types
             });
           })
         evoData = evoData['evolves_to'][0];
