@@ -1,8 +1,9 @@
 <template>
     <li :style="{ borderColor: pokemon.color.name }"
-        class="flex bg-gray-800 cursor-pointer border-t-2 w-80 p-4 items-center shadow-gray-800 rounded-lg flex-col gap-4">
-        <div @click="showCardFront = !showCardFront" :class="{ 'flex': showCardFront, 'hidden': !showCardFront }"
-            class="flex items-center flex-col justify-center">
+        class="flex bg-gray-800 cursor-pointer border-t-2 duration-300 ease-in-out w-80 p-4 items-center shadow-gray-800 rounded-lg flex-col gap-4">
+        <div @click="showCardFront = !showCardFront"
+            :class="{ 'flex': showCardFront, 'hidden': !showCardFront, 'animate__fadeIn': showCardFront, 'animate__fadeOut': !showCardFront }"
+            class="flex animate__animated items-center flex-col justify-center">
             <h2 class="text-lg font-bold first-letter:uppercase text-white">
                 {{ pokemon.name }}
             </h2>
@@ -10,7 +11,8 @@
                 <img :src="pokemon.sprites.other.home.front_default" :alt="pokemon.name">
             </figure>
         </div>
-        <div class="py-4" @click="showCardFront = !showCardFront" v-if="!showCardFront">
+        <div :class="{ 'animate__fadeIn': !showCardFront, 'animate__fadeOut': showCardFront }"
+            class="py-4 animate__animated" @click="showCardFront = !showCardFront" v-if="!showCardFront">
             <table class="table-auto text-white">
                 <thead :style="{ color: pokemon.color.name }">
                     <th>Stats</th>
