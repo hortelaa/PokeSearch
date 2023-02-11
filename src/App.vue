@@ -36,7 +36,15 @@ export default {
         })
         .then((data) => {
           this.evo_url = data.evolution_chain.url
+          this.buscarEvos();
           console.log(this.evo_url);
+        })
+    },
+    buscarEvos() {
+      fetch(this.evo_url).then((res) => res.json())
+        .then((data) => {
+          this.evolucoes = data;
+          console.log(this.evolucoes)
         })
     },
   },
