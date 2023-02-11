@@ -37,6 +37,7 @@ export default {
         .then((data) => {
           this.evo_url = data.evolution_chain.url
           this.buscarEvos();
+          this.speciesData = data;
           console.log(this.evo_url);
         })
     },
@@ -44,8 +45,27 @@ export default {
       fetch(this.evo_url).then((res) => res.json())
         .then((data) => {
           this.evolucoes = data;
+          this.parseChain();
           console.log(this.evolucoes)
         })
+    },
+    async parseChain() {
+      this.pokemonData = [];
+      let evoData = this.evolucoes.chain;
+      do {
+        let speciesName = evoData.species.name;
+        fetch(`https://pokeapi.co/api/v2/pokemon/${speciesName}`).then((res) => res.json())
+          .then((data) => {
+            this.pokemonData.push({
+              "name": data.name,
+              "sprites": data.sprites,
+              "color": this.speciesData.color,
+              "stats": data.stats
+            });
+          })
+        console.log(this.pokemonData)
+        evoData = evoData['evolves_to'][0];
+      } while (!!evoData && evoData.hasOwnProperty('evolves_to'));
     },
   },
 }
