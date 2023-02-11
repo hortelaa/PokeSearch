@@ -25,7 +25,6 @@ export default {
       evolucoes: [],
       pokemonData: [],
       error: false,
-      evoChain: [],
       speciesData: [],
     };
   },
